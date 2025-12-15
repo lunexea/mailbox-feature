@@ -1,0 +1,120 @@
+.mailbox{
+    display: flex; /*--brug af flex så den er flexibel og elementerne kan rykkes efter behov--*/
+    flex-direction: column; /*--flex direction colum for at tvinge alt indholdet til at stå på en linje--*/
+    width: 120vh; /*--brug af vh for at scale på viewport height, og nemmmere scale i responsiv--*/
+    height: auto; /*-- height auto, så den automatisk følger med resten--*/
+    margin-top: 80px;/*-- padding og margin for at lave mellemrum mellem indholdet.--*/
+    padding-bottom: 80px;
+    justify-self: center;/*--brug af både justify self og align items, for at stabilisere indholdet.--*/
+    align-items: center;
+}
+/*--overskrift og brødtekst til sektionen--*/
+#mailboxtekst{
+    display: flex;
+    flex-direction: column; /*--flex direction collum, for at fasteholde retningen--*/
+    text-align: center;
+    padding-bottom: 50px;
+}
+/*--bagrunden--*/
+.background{
+    display:flex;
+    position: absolute; /*--brug af position absolute, så den kan rykkes efter behov, og ikke påvirker de andre elementer--*/
+    z-index: -1;/*--brug af z-index for at lægge lagende ovenpå hinaden på 3 D aksen--*/
+}
+/*--formularen--*/
+#formular{
+    display: flex; /*--brug af display flex, for at kunne frit bevæge indholdet med position--*/
+    position: absolute; /*--brug af position absolut, for at kunne rykke den frit, med de mål der gives--*/
+    margin-top: 40vh; /*-- brug af margin for at skubbe den ned--*/
+    z-index: 0; /*--brug af z-index for at bestemme dens position på 3d aksen, så den kan ligge i mellem de andre elementer.--*/
+    font-family: 'Gotham light', sans-serif;
+}
+/*--selve formularen--*/
+.sendbox {
+    width: 95%;
+    padding: 50px;
+    box-sizing: border-box;
+    color: #341510;   
+    position: absolute;
+}
+.sendbox input, .sendbox textarea {
+    width: 100%;
+    padding: 8px;  
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #E9E9E9;
+}
+.sendbox label {
+    font-weight: 700;
+}
+.sendbox textarea {
+    height: 100px;
+    resize: vertical;
+}
+/*--forgrunden--*/
+.envelope{
+    display: flex;
+    position: absolute;
+    margin-top:500px;
+    z-index: 1;
+}
+/*--event pop up--*/
+#popup{
+    z-index: -10;
+    width: 430px;
+    height: 135px;
+    background-color: #1b1b1b;
+    margin: auto;
+    display: flex;
+    position: absolute;
+    top: 120%;
+    border: none;
+    border-radius: 10px;
+    opacity: 0.0;
+    transition: opacity 0.5s ease-in;
+}
+#popup p{
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+    margin: auto;
+}
+/*--lukke knappen--*/
+#CloseB{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    border: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-color: transparent;
+}
+#CloseB img{
+    position: relative;
+    height: 100%;
+    width: auto;
+}
+/*--knap der udløser pop-up--*/
+
+#button{
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+    place-content: center;
+    max-height: 90px;
+    width: 90px;
+    block-size: 20vh;
+    border-radius: 50px 50px 50px 50px; /*--border radius for at gøre den rund--*/
+    margin-top: 750px;
+    background-color: #D96207; /*--knap farve--*/
+    color: #F9E9D2; /*--font farve--*/
+    z-index: 2;
+    border: none;
+}
+/*--hover til knap--*/
+button :hover{
+    transform: scale(1.5);
+}
